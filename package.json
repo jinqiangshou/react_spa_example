@@ -1,10 +1,9 @@
 {
-  "name": "ssp_front_end_with_react",
+  "name": "react_spa_example",
   "version": "1.0.0",
-  "description": "a project written by talents!",
-  "main": "index.js",
+  "description": "single page app example with react, react-router, css-modules",
+  "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --config ./build/webpack.dev.config.js && webpack-dev-server --config ./build/webpack.dev.config.js",
     "build": "node build/build.js"
   },
