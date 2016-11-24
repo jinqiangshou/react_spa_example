@@ -1,7 +1,7 @@
 # React SPA Example
 
 ## Description
-[React](https://facebook.github.io/react/) has become more and more popular among front end engineers. Although we have [create-react-app](https://github.com/facebookincubator/create-react-app) to help building frameworks easily, I prefer doing this all by myself, because DIY brings better understanding about those tools & modules.
+[React](https://facebook.github.io/react/) has become more and more popular among front end engineers. Although we have [create-react-app](https://github.com/facebookincubator/create-react-app) to help building frameworks easily, I prefer doing this all by myself, because DIY brings me better understanding about those tools & modules.
 
 If efficiency comes first, just use [create-react-app](https://github.com/facebookincubator/create-react-app). If study comes first, do it yourself!
 
@@ -24,4 +24,4 @@ npm run dev
 ```
 - Open your browser with URL `http://localhost:8080`
 
-### To build the app in production mode, just run `npm run build` and you will see `index.html` and `static` files in the `dist` folder.
+#### To build the app in production mode, just run `npm run build` and you will see `index.html` and `static` files in the `dist` folder.
