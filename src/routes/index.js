@@ -1,15 +1,20 @@
-import React from 'react'
-import { Route, IndexRoute } from 'react-router'
-
-import App from '../App'
-import Home from '../views/home/Home'
-import Tab1 from '../views/tab1/Tab1'
-
-const routes = (
-     <Route path="/" component={App} >
-        <IndexRoute component={Home} />
-        <Route path="tab1" component={Tab1} />
-    </Route>
-)
+const routes = {
+    path: '/',
+    indexRoute: {
+        getComponent (nextState, cb) {
+            require.ensure([], (require) => {
+                cb(null, require('views/home/Home').default)
+            }, 'Home')
+        }
+    },
+    getComponent (nextState, cb) {
+        require.ensure([], (require) => {
+            cb(null, require('App').default)
+        }, 'App')
+    },
+    childRoutes: [
+        require('routes/tab1')
+    ]
+}
 
 export default routes

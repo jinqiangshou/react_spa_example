@@ -7,8 +7,8 @@ class App extends React.Component {
             <div>
                 <h1>App test</h1>
                 <ul>
-                    <li><Link to="/">About</Link></li>
-                    <li><Link to="/tab1">Inbox</Link></li>
+                    <li><Link to="/">home</Link></li>
+                    <li><Link to="/tab1">Tab1</Link></li>
                 </ul>
                 {this.props.children}
             </div>
