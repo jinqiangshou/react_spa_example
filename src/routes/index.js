@@ -1,9 +1,9 @@
-const routes = {
+const routes = [{
     path: '/',
     indexRoute: {
         getComponent (nextState, cb) {
             require.ensure([], (require) => {
-                cb(null, require('views/home/Home').default)
+                cb(null, require('views/home').default)
             }, 'Home')
         }
     },
@@ -13,8 +13,16 @@ const routes = {
         }, 'App')
     },
     childRoutes: [
-        require('routes/tab1')
+        require('routes/tab1'),
+        {
+            path: '*',
+            getComponent (nextState, cb) {
+                require.ensure([], (require) => {
+                    cb(null, require('views/notfound').default)
+                }, 'NotFound')
+            }
+        }
     ]
-}
+}]
 
 export default routes

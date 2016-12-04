@@ -13,8 +13,8 @@
   "author": "horstxu",
   "license": "ISC",
   "dependencies": {
-    "react": "^15.4.0",
-    "react-dom": "^15.4.0"
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
@@ -36,6 +36,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.24.1",
+    "normalize.css": "^5.0.0",
     "path": "^0.12.7",
     "react-css-modules": "^4.0.3",
     "react-router": "^3.0.0",

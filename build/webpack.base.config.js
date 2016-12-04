@@ -37,10 +37,6 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.styl$/,
-                loader: 'style!css!stylus?{"resolve url": true}'
-            },
-            {
                 test: /\.less$/,
                 loader: 'style!css!less'
             },

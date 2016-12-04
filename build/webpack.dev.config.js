@@ -8,7 +8,8 @@ module.exports = merge(baseConfig, {
     output: {
         path: path.resolve(__dirname, "../dist/staticDev"),
         filename: 'bundle.js',
-        publicPath: '/staticDev/'
+        publicPath: '/staticDev/',
+        chunkFilename: 'js/[id].[chunkhash:5].js'
     },
     devtool: '#eval-source-map',
     module: {
@@ -17,7 +18,15 @@ module.exports = merge(baseConfig, {
                 test: /\.css$/,
                 loaders: [
                     'style?sourceMap',
-                    'css?modules&importLoaders=1&localIdentName=[path]__[name]__[local]___[hash:base64:5]'
+                    'css?modules&importLoaders=1&localIdentName=[path]__[name]__[local]__[hash:base64:5]'
+                ]
+            },
+            {
+                test: /\.styl$/,
+                loaders: [
+                    'style?sourceMap',
+                    'css?modules&importLoaders=1&localIdentName=[path]__[name]__[local]__[hash:base64:5]',
+                    'stylus?{"resolve url": true}'
                 ]
             }
         ]

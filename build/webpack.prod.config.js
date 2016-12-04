@@ -16,10 +16,17 @@ module.exports = merge(baseConfig, {
         loaders: [
             {
                 test: /\.css$/,
-                loaders: [
-                    'style?',
+                loader: ExtractTextPlugin.extract(
+                    'style',
                     'css?modules&importLoaders=1&localIdentName=[name]_[hash:base64:5]'
-                ]
+                )
+            },
+            {
+                test: /\.styl$/,
+                loader: ExtractTextPlugin.extract('style', [
+                    'css?modules&importLoaders=1&localIdentName=[name]_[hash:base64:5]',
+                    'stylus?{"resolve url": true}'
+                ].join('!'))
             }
         ]
     },
