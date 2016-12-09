@@ -25,7 +25,7 @@ module.exports = merge(baseConfig, {
                 test: /\.styl$/,
                 loader: ExtractTextPlugin.extract('style', [
                     'css?modules&importLoaders=1&localIdentName=[name]_[hash:base64:5]',
-                    'stylus?{"resolve url": true}'
+                    'stylus'
                 ].join('!'))
             }
         ]

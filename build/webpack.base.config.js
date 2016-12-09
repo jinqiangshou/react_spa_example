@@ -62,6 +62,9 @@ module.exports = {
     resolveLoader: {
         fallback: [
             path.join(__dirname, '../node_modules')
+        ],
+        modulesDirectories: [
+            'node_modules', 'src'
         ]
     },
     eslint: {
