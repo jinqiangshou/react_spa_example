@@ -43,7 +43,7 @@ module.exports = merge(baseConfig, {
         },
         proxy: {
             '/api/*': {
-                target: 'http://m2.aiwanlu.com',
+                target: 'http://localhost:3000',
                 secure: false,
                 changeOrigin: true
             }

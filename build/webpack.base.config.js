@@ -53,15 +53,15 @@ module.exports = {
     resolve: {
         extensions: ['', '.js','.jsx'],
         root: [
-            path.resolve(__dirname, "../src")
+            path.resolve(projectRoot, "src")
         ],
         fallback: [
-            path.join(__dirname, '../node_modules')
+            path.join(projectRoot, 'node_modules')
         ]
     },
     resolveLoader: {
         fallback: [
-            path.join(__dirname, '../node_modules')
+            path.join(projectRoot, 'node_modules')
         ],
         modulesDirectories: [
             'node_modules', 'src'

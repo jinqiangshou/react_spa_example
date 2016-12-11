@@ -5,8 +5,10 @@ import styles from './index.styl'
 class TopNavBar extends React.Component {
     render () {
         return (
-            <div className='nav' styleName='nav'>
-                测试
+            <div styleName='top-nav'>
+                <div styleName='logo'>
+                    React SPA Example
+                </div>
             </div>
         )
     }

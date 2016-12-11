@@ -1,20 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router'
+import ReactCSSModule from 'react-css-modules'
 import TopNavBar from 'components/common/TopNavBar'
+import SideNavBar from 'components/common/SideNavBar'
+import styles from './app.styl'
 
 class App extends React.Component {
     render () {
         return (
             <div>
                 <TopNavBar />
-                <ul>
-                    <li><Link to="/">home</Link></li>
-                    <li><Link to="/tab1">Tab1</Link></li>
-                </ul>
-                {this.props.children}
+                <SideNavBar />
+                <div styleName='content-body'>
+                    {this.props.children}
+                </div>
             </div>
         )
     }
 }
 
-export default App
+export default ReactCSSModule(App, styles)
