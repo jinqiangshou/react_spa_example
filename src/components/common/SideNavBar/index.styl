@@ -1,6 +1,7 @@
 @import '~common/css/common_const.styl'
 
 $SideNavBarItemHeight = 50px
+$SideNavBarSubitemHeight = 30px
 
 .side-nav
     position fixed
@@ -10,13 +11,13 @@ $SideNavBarItemHeight = 50px
     margin-top $TopNavBarHeight
     box-shadow 2px 0 10px #888
     background-color #555
-    & ul
+    & > ul
         display block
         position relative
         list-style none
         margin 0
         padding 0
-        & li
+        & > li
             display block
             cursor pointer
         & a
@@ -30,5 +31,14 @@ $SideNavBarItemHeight = 50px
             background-color #AAA
 
 .side-nav-child
-    display block
-    
+    & > ul
+        display block
+        list-style none
+        margin 0
+        padding 0
+        background-color #777
+    & > ul > li
+        cursor pointer
+    & > ul > li > a
+        height $SideNavBarSubitemHeight
+        line-height $SideNavBarSubitemHeight

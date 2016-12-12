@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactCSSModule from 'react-css-modules'
 import { Link, withRouter } from 'react-router'
+import arr from 'lodash/array'
 import styles from './index.styl'
 
 class SideNavBar extends React.Component {
@@ -10,11 +11,18 @@ class SideNavBar extends React.Component {
             list: [
                 {
                     path: '/',
-                    title: 'home'
+                    title: 'home',
+                    childPathList: [
+                        '/'
+                    ]
                 }, {
                     path: '/tab1',
                     title: 'tab1',
+                    childPathList: [
+                        '/tab1', '/tab2'
+                    ],
                     child: [
+                        {path: '/tab1', title: 'tab1sub'},
                         {path: '/tab2', title: 'tab2'}
                     ]
                 }
@@ -23,24 +31,30 @@ class SideNavBar extends React.Component {
     }
 
     componentDidMount () {
-        console.log(arguments)
-        console.log(this.props)
-        console.log(this.props.location)
-        console.log(this.props.router)
-        console.log(window.location)
+        // console.log(arguments)
+        // console.log(this.props)
+        // console.log(this.props.location)
+        // console.log(this.props.router)
+        // console.log(window.location)
     }
 
     render () {
-        let activeCss = {'background': '#BBB'}
+        let _self = this
 
         let listItems = this.state.list.map(function (item, index) {
             let subItem = null
 
-            if (item.child && item.child.length > 0) {
+            let shouldShowSubItem = item.child &&
+                item.child.length > 0 &&
+                arr.indexOf(item.childPathList, _self.props.location.pathname) >= 0
+
+            let activeSubItemCss = {fontWeight: 'bold'}
+
+            if (shouldShowSubItem) {
                 let subItemList = item.child.map((child, subIndex) => (
                     <li key={subIndex}>
                         <Link
-                            activeStyle={activeCss}
+                            activeStyle={activeSubItemCss}
                             to={child.path}
                         >{child.title}</Link>
                     </li>
@@ -57,7 +71,6 @@ class SideNavBar extends React.Component {
                 <li key={index}>
                     <Link
                         to={item.path}
-                        activeStyle={activeCss}
                         onlyActiveOnIndex={true}
                     >{item.title}</Link>
                     {subItem}

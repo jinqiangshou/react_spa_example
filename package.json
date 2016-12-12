@@ -36,6 +36,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.24.1",
+    "lodash": "^4.17.2",
     "normalize.css": "^5.0.0",
     "path": "^0.12.7",
     "react-css-modules": "^4.0.3",
