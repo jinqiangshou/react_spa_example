@@ -14,6 +14,7 @@ const routes = [{
     },
     childRoutes: [
         require('routes/tab1'),
+        require('routes/tab2'),
         {
             path: '*',
             getComponent (nextState, cb) {
