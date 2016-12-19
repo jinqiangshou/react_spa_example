@@ -11,7 +11,9 @@ class App extends React.Component {
                 <TopNavBar />
                 <SideNavBar />
                 <div styleName='content-body'>
-                    {this.props.children}
+                    <div styleName='content-core'>
+                        {this.props.children}
+                    </div>
                 </div>
             </div>
         )
