@@ -1,8 +1,8 @@
-import { Component, PropTypes, createElement } from 'react'
+import { PureComponent, PropTypes, createElement } from 'react'
 import ReactCSSModule from 'react-css-modules'
 import customStyles from './button1.styl'
 
-class Button1 extends Component {
+class Button1 extends PureComponent {
     constructor (props) {
         super(props)
         this.handleClick = this.handleClick.bind(this)

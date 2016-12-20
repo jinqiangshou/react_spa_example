@@ -1,0 +1,31 @@
+@import '~common/css/common_const.styl'
+
+.checkbox-label
+    display inline-block
+    line-height 16px
+    height 16px
+
+.checkbox-input
+    position absolute
+    clip rect(0, 0, 0, 0)
+
+.checkbox-span
+    display inline-block
+    box-sizing border-box
+    position relative
+    margin-right 5px
+    width 16px
+    height 16px
+    border 1px solid #c2cbd4
+    border-radius 1px
+    cursor pointer
+    &:hover
+        border 1px solid $WidgetBaseColor
+
+.checkbox-text
+    display inline-block
+    vertical-align top
+
+.checkbox-input:checked~.checkbox-span
+    border none
+    background url('common/img/checkbox-checked.png') no-repeat top
