@@ -4,12 +4,22 @@ var merge = require('webpack-merge')
 var baseConfig = require('./webpack.base.config.js')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
+var projectRoot = path.resolve(__dirname, '../')
+var srcRoot = path.join(projectRoot, 'src') // 开发源码目录
+
 module.exports = merge(baseConfig, {
     output: {
-        path: path.resolve(__dirname, "../dist/staticDev"),
+        path: path.resolve(__dirname, "../dist"),
         filename: 'bundle.js',
-        publicPath: '/staticDev/',
+        publicPath: '/',
         chunkFilename: 'js/[id].[chunkhash:5].js'
+    },
+    entry: {
+        app: [
+            'webpack-dev-server/client?http://localhost:8080',
+            'webpack/hot/dev-server',
+            path.join(srcRoot, 'main.js')
+        ]
     },
     devtool: '#eval-source-map',
     module: {
@@ -31,24 +41,6 @@ module.exports = merge(baseConfig, {
             }
         ]
     },
-    devServer: {
-        port: 8080,
-        stats: {color: true},
-        inline: true,
-        hot: true,
-        quiet: true,
-        contentBase: "./dist",
-        historyApiFallback: {
-            index: 'dev.html'
-        },
-        proxy: {
-            '/api/*': {
-                target: 'http://localhost:3000',
-                secure: false,
-                changeOrigin: true
-            }
-        }
-    },
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
@@ -57,8 +49,8 @@ module.exports = merge(baseConfig, {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            filename: '../dev.html',
-            template: 'src/index.html',
+            inject: true,
+            template: path.resolve(__dirname, '../src/index.html'),
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,

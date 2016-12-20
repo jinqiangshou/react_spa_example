@@ -4,7 +4,7 @@
   "description": "single page app example with react, react-router, css-modules",
   "main": "src/main.js",
   "scripts": {
-    "dev": "webpack --display-error-details --config ./build/webpack.dev.config.js && webpack-dev-server --config ./build/webpack.dev.config.js",
+    "dev": "node build/start.js",
     "build": "node build/build.js"
   },
   "keywords": [
@@ -38,6 +38,7 @@
     "html-webpack-plugin": "^2.24.1",
     "lodash": "^4.17.2",
     "normalize.css": "^5.0.0",
+    "opn": "^4.0.2",
     "path": "^0.12.7",
     "react-css-modules": "^4.0.3",
     "react-router": "^3.0.0",
