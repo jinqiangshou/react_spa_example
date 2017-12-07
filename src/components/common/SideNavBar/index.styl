@@ -4,41 +4,41 @@ $SideNavBarItemHeight = 50px
 $SideNavBarSubitemHeight = 30px
 
 .side-nav
-    position fixed
-    top 0
-    height 100%
-    width $SideNavBarWidth
-    margin-top $TopNavBarHeight
-    box-shadow 2px 0 10px #888
-    background-color #555
-    & > ul
-        display block
-        position relative
-        list-style none
-        margin 0
-        padding 0
-        & > li
-            display block
-            cursor pointer
-        & a
-            display block
-            height $SideNavBarItemHeight
-            line-height $SideNavBarItemHeight
-            width 100%
-            text-decoration none
-            color #FFF
-        & a:hover
-            background-color #AAA
+  position fixed
+  top 0
+  height 100%
+  width $SideNavBarWidth
+  margin-top $TopNavBarHeight
+  box-shadow 2px 0 10px #888
+  background-color #555
+  & > ul
+    display block
+    position relative
+    list-style none
+    margin 0
+    padding 0
+    & > li
+      display block
+      cursor pointer
+    & a
+      display block
+      height $SideNavBarItemHeight
+      line-height $SideNavBarItemHeight
+      width 100%
+      text-decoration none
+      color #FFF
+    & a:hover
+      background-color #AAA
 
 .side-nav-child
-    & > ul
-        display block
-        list-style none
-        margin 0
-        padding 0
-        background-color #777
-    & > ul > li
-        cursor pointer
-    & > ul > li > a
-        height $SideNavBarSubitemHeight
-        line-height $SideNavBarSubitemHeight
+  & > ul
+    display block
+    list-style none
+    margin 0
+    padding 0
+    background-color #777
+  & > ul > li
+    cursor pointer
+  & > ul > li > a
+    height $SideNavBarSubitemHeight
+    line-height $SideNavBarSubitemHeight

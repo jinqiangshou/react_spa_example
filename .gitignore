@@ -2,8 +2,7 @@
 node_modules
 
 # dist file
-dist/staticDev
-dist/dev.html
+dist
 
 # log file
 *.log
